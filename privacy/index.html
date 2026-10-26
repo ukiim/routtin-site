@@ -8,6 +8,10 @@
   고칠 때는 이 파일을 고친 뒤 배포 저장소의 index.html로 복사해 push 한다.
   코드가 하는 일이 바뀌면(수집 항목·수탁사·건강 데이터 쓰기·분석 SDK) 여기도 함께 고친다.
 
+  2.1 (2026-10-26) — 앱 1.7.0이 Google AdMob 배너 광고를 넣는다. 머리말·3절·7절·10절에서
+                     "광고 없음"을 걷어내고 7절에 AdMob 이전 항목·추적 허용·유럽 동의를 적었다.
+                     절 번호는 바꾸지 않았다(다른 절이 번호로 서로 가리킨다).
+                     **1.7.0이 스토어에 나오는 날 배포한다** — 그 전에는 1.6.0에 광고가 없다.
   2.0 (2026-10-03) — 앱 1.6.0이 완료 도장·인증샷·하루 카드·별점 요청·목표 선택·
                      테마별 추천 팩·목표별 모임 참여를 없앴다. 그에 맞춰 (4개 언어)
                      2절: 완료 이력·진도·목표를 "이전 버전이 저장한 것"으로 옮기고
@@ -244,7 +248,7 @@
   <main data-lang="ko" class="on">
     <header>
       <h1>루띤 개인정보 처리방침</h1>
-      <p class="updated">최종 수정일 2026년 10월 3일 · 버전 2.0</p>
+      <p class="updated">최종 수정일 2026년 10월 26일 · 버전 2.1</p>
     </header>
 
     <p class="lede">
@@ -252,7 +256,8 @@
       로그인하지 않고 AI 플래너를 쓰지 않으면,
       <strong>여러분의 정보는</strong> 아무것도 기기 밖으로 나가지 않습니다.
       로그인하면 루틴과 설정이 <strong>기기를 바꿔도 이어지도록</strong> 서버에 저장됩니다.
-      광고도, 분석도, 추적도 없습니다.
+      다만 1.7.0부터 광고가 있어, 광고를 띄울 때 기기 정보와 IP 주소가 Google에
+      전달됩니다(아래 7번). 분석 도구는 없고, 추적은 여러분이 허용한 경우에만 합니다.
     </p>
 
     <section>
@@ -306,7 +311,7 @@
       <p>루띤은 다음을 <span class="none">수집하지 않습니다</span>.</p>
       <ul>
         <li>위치, 연락처, 마이크, 카메라, 사진</li>
-        <li>광고 식별자(IDFA), 사용 기록 — 광고 SDK도 분석 SDK도 넣지 않았습니다</li>
+        <li>사용 기록 — 분석 SDK는 넣지 않았습니다. 광고에 쓰이는 정보는 아래 7번에 따로 적었습니다</li>
         <li>건강 앱에서 읽은 수면·걸음 값 (아래 4번)</li>
         <li>비밀번호</li>
       </ul>
@@ -316,7 +321,7 @@
         업데이트한 뒤 앱을 켜면 <strong>그 사진 사본을 기기에서 지웁니다</strong>
         (사진 앱의 원본은 건드리지 않습니다).
       </p>
-      <p>다른 회사의 앱·웹사이트를 가로지르는 이용자 추적을 하지 않습니다.</p>
+      <p>다른 회사의 앱·웹사이트를 가로지르는 추적은 <strong>여러분이 허용한 경우에만</strong> 광고 맞춤에 쓰입니다 (아래 7번).</p>
     </section>
 
     <section>
@@ -436,9 +441,29 @@
         보냅니다. 여기에는 여러분이 누구인지, 어떤 루틴을 쓰는지가 들어 있지 않습니다.
       </p>
       <p>
+        <strong>광고 (1.7.0부터)</strong> — 앱을 무료로 운영하려고 홈 화면 아래와 함께 피드에
+        Google AdMob 광고를 띄웁니다. 광고를 보여 주고 성과를 재려고 Google이 아래 정보를
+        받습니다. 로그인하지 않아도 광고가 뜰 때 전송됩니다.
+      </p>
+      <dl class="biz">
+        <dt>이전받는 자</dt><dd>Google LLC</dd>
+        <dt>이용 서비스</dt><dd>Google AdMob (광고 표시·측정)</dd>
+        <dt>이전 항목</dt><dd>기기 정보(기종·OS·언어), IP 주소, 광고를 보고 누른 기록, 광고 식별자(IDFA — 추적을 허용한 경우에만)</dd>
+        <dt>이전 국가</dt><dd>미국 등 Google이 운영하는 데이터센터</dd>
+        <dt>이전 시점·방법</dt><dd>광고가 표시될 때, 암호화된 통신(TLS)으로</dd>
+        <dt>보유·이용 기간</dt><dd>Google의 방침에 따릅니다</dd>
+      </dl>
+      <p>
+        처음 실행할 때 추적 허용 여부를 묻습니다. 허용하지 않으면 광고 식별자 없이
+        맞춤이 아닌 광고가 나옵니다. 나중에 iOS <em>설정 › 개인정보 보호 및 보안 › 추적</em>에서
+        바꿀 수 있습니다. 유럽(EEA·영국·스위스)에서는 별도 동의 화면이 뜨고, 프로필의
+        <em>광고 개인정보 설정</em>에서 언제든 다시 고를 수 있습니다. Google이 이 정보를 다루는
+        방식은 <a href="https://policies.google.com/technologies/partner-sites">Google 파트너 사이트 정책</a>을 따릅니다.
+      </p>
+      <p>
         <strong>여러분이 직접 공개하기로 한 것(위 6번)</strong>을 빼면, 이 밖에는
         <span class="none">아무에게도</span> 판매·공유·제공하지 않습니다.
-        광고나 프로파일링에 쓰지 않습니다.
+        루틴·건강·계정 정보는 광고나 프로파일링에 쓰지 않습니다.
       </p>
     </section>
 
@@ -489,7 +514,7 @@
 
     <section>
       <h2><span class="n">10</span> 네트워크 통신</h2>
-      <p>루띤이 인터넷을 쓰는 곳은 네 군데뿐입니다.</p>
+      <p>루띤이 인터넷을 쓰는 곳은 다섯 군데뿐입니다.</p>
       <ul>
         <li><strong>Firebase</strong> — 로그인과 동기화.
           로그인하지 않으면 이 통신은 아예 일어나지 않습니다</li>
@@ -505,6 +530,8 @@
         <li><strong>NVIDIA</strong> — AI 루틴 플래너(위 5번).
           <strong>여러분이 플래너를 실행할 때만</strong> 통신합니다.
           실행하지 않으면 이 통신은 아예 일어나지 않습니다</li>
+        <li><strong>Google AdMob</strong> — 광고(위 7번). 홈 화면과 함께 피드에 광고가 뜰 때 통신합니다.
+          로그인과 상관없이 일어납니다</li>
       </ul>
     </section>
 
@@ -544,7 +571,7 @@
   <main data-lang="en">
     <header>
       <h1>Ruttin Privacy Policy</h1>
-      <p class="updated">Last updated 3 October 2026 · Version 2.0</p>
+      <p class="updated">Last updated 26 October 2026 · Version 2.1</p>
     </header>
 
     <p class="lede">
@@ -552,7 +579,9 @@
       If you don't sign in and don't use the AI planner,
       <strong>none of your information</strong> leaves your device.
       If you do sign in, your routines and settings are stored on a server so they
-      <strong>follow you to a new phone</strong>. No ads, no analytics, no tracking.
+      <strong>follow you to a new phone</strong>. From 1.7.0 the app shows ads, so
+      device information and your IP address go to Google when an ad is shown (section 7).
+      There are no analytics, and tracking happens only if you allow it.
     </p>
 
     <section>
@@ -610,7 +639,7 @@
       <p>Ruttin <span class="none">does not collect</span>:</p>
       <ul>
         <li>Location, contacts, microphone, camera or photos</li>
-        <li>Advertising identifiers (IDFA) or usage history — there is no ad SDK and no analytics SDK</li>
+        <li>Usage history — there is no analytics SDK. What the ads use is listed separately in section 7</li>
         <li>The sleep and step values read from the Health app (see 4 below)</li>
         <li>Your password</li>
       </ul>
@@ -621,7 +650,7 @@
         <strong>those copies are deleted from the device</strong> (the originals
         in your Photos app are not touched).
       </p>
-      <p>We do not track you across other companies' apps or websites.</p>
+      <p>Tracking across other companies' apps and websites is used for ad personalisation <strong>only if you allow it</strong> (section 7).</p>
     </section>
 
     <section>
@@ -746,9 +775,31 @@
         so on. That data says nothing about who you are or what routines you keep.
       </p>
       <p>
+        <strong>Ads (from 1.7.0)</strong> — to keep the app free, Google AdMob ads are shown
+        at the bottom of the home screen and in the Together feed. To show ads and measure
+        them, Google receives the information below. This happens whenever an ad is shown,
+        even if you are not signed in.
+      </p>
+      <dl class="biz">
+        <dt>Recipient</dt><dd>Google LLC</dd>
+        <dt>Service</dt><dd>Google AdMob (showing and measuring ads)</dd>
+        <dt>Data</dt><dd>Device information (model, OS, language), IP address, ad views and taps, advertising identifier (IDFA — only if you allow tracking)</dd>
+        <dt>Country</dt><dd>Data centres operated by Google, including the United States</dd>
+        <dt>When and how</dt><dd>When an ad is shown, over an encrypted connection (TLS)</dd>
+        <dt>Retention</dt><dd>Per Google's own policy</dd>
+      </dl>
+      <p>
+        The first time you open the app, iOS asks whether to allow tracking. If you don't,
+        you get non-personalised ads without the advertising identifier. You can change this
+        later in iOS <em>Settings › Privacy &amp; Security › Tracking</em>. In Europe (EEA, UK and
+        Switzerland) a separate consent screen appears, and you can choose again at any time
+        under <em>Ad privacy choices</em> in Profile. How Google handles this data is governed by
+        <a href="https://policies.google.com/technologies/partner-sites">Google's partner sites policy</a>.
+      </p>
+      <p>
         Apart from <strong>what you choose to make public yourself (section 6)</strong>, we sell,
         share or hand your data to <span class="none">no one</span>.
-        It is never used for advertising or profiling.
+        Your routines, health data and account details are never used for advertising or profiling.
       </p>
     </section>
 
@@ -805,7 +856,7 @@
 
     <section>
       <h2><span class="n">10</span> Network requests</h2>
-      <p>Ruttin only ever talks to four places:</p>
+      <p>Ruttin only ever talks to five places:</p>
       <ul>
         <li><strong>Firebase</strong> — sign-in and sync.
           If you don't sign in, this traffic never happens at all</li>
@@ -822,6 +873,8 @@
         <li><strong>NVIDIA</strong> — the AI routine planner (section 5).
           This happens <strong>only when you run the planner</strong>.
           If you never run it, the request never happens at all</li>
+        <li><strong>Google AdMob</strong> — ads (section 7). This happens when an ad is shown on the
+          home screen or in the Together feed, whether or not you are signed in</li>
       </ul>
     </section>
 
@@ -863,7 +916,7 @@
   <main data-lang="ja">
     <header>
       <h1>Ruttin プライバシーポリシー</h1>
-      <p class="updated">最終更新日 2026年10月3日 · バージョン 2.0</p>
+      <p class="updated">最終更新日 2026年10月26日 · バージョン 2.1</p>
     </header>
 
     <p class="lede">
@@ -871,7 +924,9 @@
       ログインせず、AIプランナーも使わなければ、
       <strong>あなたの情報</strong>が端末の外に出ることはありません。
       ログインすると、ルーティンと設定が<strong>機種を変えても引き継がれるように</strong>
-      サーバーに保存されます。広告も、解析も、追跡もありません。
+      サーバーに保存されます。ただし 1.7.0 から広告があり、広告を表示するときに
+      端末情報と IP アドレスが Google に送られます（下の7番）。解析ツールはなく、
+      追跡はあなたが許可した場合にだけ行います。
     </p>
 
     <section>
@@ -925,7 +980,7 @@
       <p>Ruttin は次の情報を<span class="none">取得しません</span>。</p>
       <ul>
         <li>位置情報、連絡先、マイク、カメラ、写真</li>
-        <li>広告識別子（IDFA）、利用履歴 — 広告 SDK も解析 SDK も組み込んでいません</li>
+        <li>利用履歴 — 解析 SDK は組み込んでいません。広告に使われる情報は下の7番に別途記載しています</li>
         <li>ヘルスケアから読み取った睡眠・歩数の値（下の 4 番）</li>
         <li>パスワード</li>
       </ul>
@@ -935,7 +990,7 @@
         1.6.0 に更新してアプリを開くと、<strong>そのコピーを端末から削除します</strong>
         （写真アプリの元の写真には触れません）。
       </p>
-      <p>他社のアプリやウェブサイトをまたぐ追跡は行いません。</p>
+      <p>他社のアプリやウェブサイトをまたぐ追跡は、<strong>あなたが許可した場合にだけ</strong>広告の最適化に使われます（下の7番）。</p>
     </section>
 
     <section>
@@ -1056,9 +1111,30 @@
         含まれません。
       </p>
       <p>
+        <strong>広告（1.7.0 から）</strong> — アプリを無料で続けるため、ホーム画面の下と
+        みんなのフィードに Google AdMob の広告を表示します。広告の表示と効果測定のため、
+        Google が次の情報を受け取ります。ログインしていなくても、広告が表示されるときに送信されます。
+      </p>
+      <dl class="biz">
+        <dt>移転先</dt><dd>Google LLC</dd>
+        <dt>利用サービス</dt><dd>Google AdMob（広告の表示・測定）</dd>
+        <dt>移転する項目</dt><dd>端末情報（機種・OS・言語）、IP アドレス、広告の表示・タップ履歴、広告識別子（IDFA — 追跡を許可した場合のみ）</dd>
+        <dt>移転先の国</dt><dd>米国など Google が運営するデータセンター</dd>
+        <dt>移転の時期・方法</dt><dd>広告が表示されるとき、暗号化された通信（TLS）で</dd>
+        <dt>保有・利用期間</dt><dd>Google のポリシーに従います</dd>
+      </dl>
+      <p>
+        初回起動時に追跡を許可するかどうかを尋ねます。許可しない場合は、広告識別子を使わない
+        パーソナライズされていない広告が表示されます。あとから iOS の
+        <em>設定 › プライバシーとセキュリティ › トラッキング</em>で変更できます。ヨーロッパ（EEA・英国・スイス）では
+        別途同意画面が表示され、プロフィールの<em>広告のプライバシー設定</em>からいつでも選び直せます。
+        Google によるこの情報の取り扱いは
+        <a href="https://policies.google.com/technologies/partner-sites">Google パートナーサイトのポリシー</a>に従います。
+      </p>
+      <p>
         <strong>ご自身が公開すると決めたもの（上の6番）</strong>を除き、これ以外に
         <span class="none">誰にも</span>販売・共有・提供しません。
-        広告やプロファイリングには使いません。
+        ルーティン・健康・アカウントの情報は、広告やプロファイリングには使いません。
       </p>
     </section>
 
@@ -1112,7 +1188,7 @@
 
     <section>
       <h2><span class="n">10</span> 通信について</h2>
-      <p>Ruttin がインターネットを使うのは次の 4 か所だけです。</p>
+      <p>Ruttin がインターネットを使うのは次の 5 か所だけです。</p>
       <ul>
         <li><strong>Firebase</strong> — ログインと同期。
           ログインしなければ、この通信は一切発生しません</li>
@@ -1129,6 +1205,8 @@
         <li><strong>NVIDIA</strong> — AIルーティンプランナー（上記5番）。
           <strong>プランナーを実行したときにのみ</strong>通信します。
           実行しなければ、この通信は一切発生しません</li>
+        <li><strong>Google AdMob</strong> — 広告（上記7番）。ホーム画面とみんなのフィードに広告が
+          表示されるときに通信します。ログインの有無に関係なく発生します</li>
       </ul>
     </section>
 
@@ -1169,14 +1247,15 @@
   <main data-lang="zh">
     <header>
       <h1>Ruttin 隐私政策</h1>
-      <p class="updated">最后更新 2026年10月3日 · 版本 2.0</p>
+      <p class="updated">最后更新 2026年10月26日 · 版本 2.1</p>
     </header>
 
     <p class="lede">
       除社区外，<strong>不注册账号也能使用 Ruttin 的全部功能。</strong>
       不登录、也不使用 AI 规划师时，<strong>你的信息</strong>不会离开你的设备。
       登录后，例行与设置会保存到服务器，<strong>换手机也能接着用。</strong>
-      没有广告，没有分析，也不做追踪。
+      不过自 1.7.0 起应用中有广告，显示广告时设备信息和 IP 地址会发送给 Google
+      （见下文第 7 条）。没有分析工具，只有在你允许时才会追踪。
     </p>
 
     <section>
@@ -1228,7 +1307,7 @@
       <p>Ruttin <span class="none">不收集</span>以下信息：</p>
       <ul>
         <li>位置、通讯录、麦克风、摄像头、照片</li>
-        <li>广告标识符（IDFA）、使用记录 — 应用中没有广告 SDK，也没有分析 SDK</li>
+        <li>使用记录 — 应用中没有分析 SDK。广告所用的信息另见下文第 7 条</li>
         <li>从「健康」读取到的睡眠与步数数值（见下文第 4 条）</li>
         <li>密码</li>
       </ul>
@@ -1237,7 +1316,7 @@
         留下的照片从未上传，只存在设备上。更新到 1.6.0 并打开应用后，
         <strong>这些副本会从设备上删除</strong>（不会动「照片」应用里的原图）。
       </p>
-      <p>我们不会跨其他公司的应用或网站追踪用户。</p>
+      <p>跨其他公司应用或网站的追踪，<strong>只有在你允许时</strong>才会用于广告个性化（见下文第 7 条）。</p>
     </section>
 
     <section>
@@ -1350,9 +1429,27 @@
         这些信息不包含你的身份，也不包含你的例行内容。
       </p>
       <p>
+        <strong>广告（自 1.7.0 起）</strong> — 为了让应用保持免费，首页底部和「一起」动态中会显示
+        Google AdMob 广告。为了展示广告并衡量效果，Google 会收到以下信息。即使未登录，显示广告时也会发送。
+      </p>
+      <dl class="biz">
+        <dt>接收方</dt><dd>Google LLC</dd>
+        <dt>使用的服务</dt><dd>Google AdMob（展示与衡量广告）</dd>
+        <dt>传输项目</dt><dd>设备信息（机型、系统、语言）、IP 地址、广告浏览与点击记录、广告标识符（IDFA — 仅在你允许追踪时）</dd>
+        <dt>传输国家</dt><dd>美国等 Google 运营的数据中心</dd>
+        <dt>传输时间与方式</dt><dd>显示广告时，通过加密连接（TLS）</dd>
+        <dt>保存期限</dt><dd>依照 Google 的政策</dd>
+      </dl>
+      <p>
+        首次打开应用时，iOS 会询问是否允许追踪。不允许时，会显示不使用广告标识符的非个性化广告。
+        之后可在 iOS <em>设置 › 隐私与安全性 › 跟踪</em>中更改。在欧洲（EEA、英国、瑞士）会另外显示同意页面，
+        也可以随时在「我的」页的<em>广告隐私设置</em>中重新选择。Google 如何处理这些信息，依照
+        <a href="https://policies.google.com/technologies/partner-sites">Google 合作伙伴网站政策</a>。
+      </p>
+      <p>
         除<strong>你自己决定公开的内容（见上文第 6 节）</strong>外，我们
         <span class="none">不向任何人</span>出售、共享或提供你的数据，
-        也不用于广告或用户画像。
+        你的例行、健康和账号信息也不用于广告或用户画像。
       </p>
     </section>
 
@@ -1399,7 +1496,7 @@
 
     <section>
       <h2><span class="n">10</span> 网络请求</h2>
-      <p>Ruttin 只会与四个地方通信：</p>
+      <p>Ruttin 只会与五个地方通信：</p>
       <ul>
         <li><strong>Firebase</strong> — 登录与同步。
           不登录时，完全不会产生这类通信</li>
@@ -1413,6 +1510,8 @@
         <li><strong>NVIDIA</strong> — AI 例行规划师（上文第 5 条）。
           <strong>只有在你运行规划师时</strong>才会通信。
           不运行时，完全不会产生这类请求</li>
+        <li><strong>Google AdMob</strong> — 广告（上文第 7 条）。首页和「一起」动态显示广告时通信，
+          与是否登录无关</li>
       </ul>
     </section>
 
