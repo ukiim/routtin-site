@@ -8,6 +8,17 @@
   고칠 때는 이 파일을 고친 뒤 배포 저장소의 index.html로 복사해 push 한다.
   코드가 하는 일이 바뀌면(수집 항목·수탁사·건강 데이터 쓰기·분석 SDK) 여기도 함께 고친다.
 
+  2.0 (2026-10-03) — 앱 1.6.0이 완료 도장·인증샷·하루 카드·별점 요청·목표 선택·
+                     테마별 추천 팩·목표별 모임 참여를 없앴다. 그에 맞춰 (4개 언어)
+                     2절: 완료 이력·진도·목표를 "이전 버전이 저장한 것"으로 옮기고
+                     언제 지워지는지 밝혔다(서버 문서는 전체 교체라 새 버전도 그
+                     값을 그대로 실어 보낸다 — 지우지 않는다고 적었다).
+                     3절: 사진을 다시 「수집하지 않는 정보」에 넣고, 이전 버전에서
+                     남긴 사진은 업데이트 뒤 앱을 켤 때 기기에서 지운다고 적었다.
+                     5절: NVIDIA로 가는 항목에서 목표를 뺐다.
+                     6절: 목표별 공개 모임은 새로 들어갈 수 없다고 고쳤다.
+                     **1.6.0이 스토어에 나오는 날 배포한다** — 그 전에는 1.5.0이
+                     여전히 사진을 쓰므로 3절이 거짓이 된다.
   1.9 (2026-10-01) — 같은 날 스윕이 원글 없는 붙이기 기록을 치우게 되어, 그 문장에
                      "원글이 지워지면 함께 지워진다"를 더했다(4개 언어). 스윕은 운영자
                      기기에서 도는 작업이라 "하루 안에" 같은 시간 약속은 넣지 않았다.
@@ -233,7 +244,7 @@
   <main data-lang="ko" class="on">
     <header>
       <h1>루띤 개인정보 처리방침</h1>
-      <p class="updated">최종 수정일 2026년 10월 1일 · 버전 1.9</p>
+      <p class="updated">최종 수정일 2026년 10월 3일 · 버전 2.0</p>
     </header>
 
     <p class="lede">
@@ -271,13 +282,19 @@
       </p>
       <ul>
         <li>루틴 목록 — 이름, 시작 시간, 길이, 아이콘, 색</li>
-        <li>완료한 루틴과 그 날짜 (최근 60일)</li>
-        <li>루틴을 시작한 날과 지금까지 열린 루틴 수</li>
-        <li>기상 시간, 취침 시간, 선택한 목표</li>
+        <li>기상 시간, 취침 시간</li>
         <li>앱에서 직접 입력한 표시 이름과 나이 (선택 사항)</li>
         <li>알림 사용 여부, 언어 설정, 건강 앱 연동 여부</li>
         <li>커뮤니티를 쓴다면 — 닉네임과 커뮤니티 약관에 동의한 시각 (위 6번)</li>
       </ul>
+      <p>
+        <strong>1.5.0까지의 버전을 쓰셨다면</strong> 그때 저장된 완료 기록(최근 60일),
+        루틴을 시작한 날과 열린 루틴 수, 선택한 목표가 같은 문서에 남아 있습니다.
+        1.6.0부터는 이 기능들이 없어 새로 쌓이지 않고 화면에도 보이지 않지만,
+        다른 기기의 이전 버전이 계속 쓸 수 있도록 <strong>저희가 따로 지우지는
+        않습니다</strong>. <em>데이터 초기화</em>나 <em>계정 삭제</em>를 하면 함께
+        지워집니다 (아래 8번).
+      </p>
       <p>
         같은 내용이 기기 안(UserDefaults)에도 남아, 인터넷이 없어도 앱이 그대로 돌아갑니다.
         <strong>로그아웃 상태에서는 기기에만 남고 어디로도 전송되지 않습니다.</strong>
@@ -288,20 +305,16 @@
       <h2><span class="n">3</span> 수집하지 않는 정보</h2>
       <p>루띤은 다음을 <span class="none">수집하지 않습니다</span>.</p>
       <ul>
-        <li>위치, 연락처, 마이크, 카메라</li>
+        <li>위치, 연락처, 마이크, 카메라, 사진</li>
         <li>광고 식별자(IDFA), 사용 기록 — 광고 SDK도 분석 SDK도 넣지 않았습니다</li>
         <li>건강 앱에서 읽은 수면·걸음 값 (아래 4번)</li>
         <li>비밀번호</li>
       </ul>
       <p>
-        <strong>사진은 한 가지 경우에만 씁니다.</strong> 완료한 루틴에
-        <em>사진 남기기</em>를 눌러 <strong>여러분이 직접 고른</strong> 사진 한 장은
-        앱 폴더에 복사되어 <strong>이 기기에만</strong> 남습니다. 저희 서버로
-        올리지 않고, 다른 기기로 동기화하지도 않으며, 하루 카드를 만들 때만 씁니다.
-        사진 보관함을 뒤지거나 목록을 읽지 않고, 고르지 않으면 앱은 사진에
-        접근하지 않습니다. 기록 보관 기간이 지나면 함께 지워지고, 허용한 권한은
-        iOS <em>설정 &gt; 개인정보 보호 및 보안 &gt; 사진</em>에서 언제든 취소할 수
-        있습니다.
+        <strong>1.6.0부터 사진을 쓰지 않습니다.</strong> 이전 버전에서 완료한 루틴에
+        남긴 사진은 서버로 올라간 적이 없고 기기에만 있었습니다. 1.6.0으로
+        업데이트한 뒤 앱을 켜면 <strong>그 사진 사본을 기기에서 지웁니다</strong>
+        (사진 앱의 원본은 건드리지 않습니다).
       </p>
       <p>다른 회사의 앱·웹사이트를 가로지르는 이용자 추적을 하지 않습니다.</p>
     </section>
@@ -341,11 +354,10 @@
       </p>
       <p>플래너를 실행하면 다음이 NVIDIA로 전송됩니다.</p>
       <ul>
-        <li>선택한 목표 (예: 미라클 모닝)</li>
         <li>기상 시간과 취침 시간</li>
         <li>앱 언어 설정</li>
         <li>이미 만들어 둔 루틴의 <strong>이름</strong> — 같은 것을 또 제안하지 않으려는
-          용도입니다. 시각과 완료 이력은 보내지 않습니다</li>
+          용도입니다. 시각은 보내지 않습니다</li>
       </ul>
       <p>
         <strong>수면·걸음 데이터는 보내지 않습니다.</strong> Apple 건강에서 읽은 값은
@@ -387,7 +399,8 @@
       </ul>
       <p>
         모임에 들어가는 데 필요한 초대 코드는 무작위 6자리이고, 코드를 아는 사람만
-        들어올 수 있습니다. 목표별 공개 모임은 누구나 들어올 수 있습니다.
+        들어올 수 있습니다. 목표별 공개 모임은 1.6.0부터 새로 들어갈 수 없습니다
+        (이미 들어가 있던 모임은 그대로 쓰고, 언제든 나갈 수 있습니다).
         <strong>무작위로 낯선 사람과 연결해 주는 기능은 없습니다.</strong>
       </p>
       <p>
@@ -531,7 +544,7 @@
   <main data-lang="en">
     <header>
       <h1>Ruttin Privacy Policy</h1>
-      <p class="updated">Last updated 1 October 2026 · Version 1.9</p>
+      <p class="updated">Last updated 3 October 2026 · Version 2.0</p>
     </header>
 
     <p class="lede">
@@ -570,13 +583,21 @@
       </p>
       <ul>
         <li>Your routines — name, start time, duration, icon and colour</li>
-        <li>Which routines you completed, and on what date (last 60 days)</li>
-        <li>The day you started and how many routines have opened so far</li>
-        <li>Your wake time, sleep time and chosen goal</li>
+        <li>Your wake time and sleep time</li>
         <li>The display name and age you type into the app (both optional)</li>
         <li>Notification toggle, language setting and whether Health is connected</li>
         <li>If you use the community — your nickname and when you accepted the community terms (section 6)</li>
       </ul>
+      <p>
+        <strong>If you used version 1.5.0 or earlier</strong>, what it saved —
+        which routines you completed (last 60 days), the day you started and how
+        many routines had opened, and the goal you chose — is still in that
+        document. From 1.6.0 these features are gone, so nothing new is added
+        and none of it is shown, but <strong>we do not delete it on our own</strong>,
+        because an older version on another device may still use it. It is
+        deleted when you use <em>Reset data</em> or <em>Delete account</em>
+        (section 8).
+      </p>
       <p>
         The same data also stays on your device (UserDefaults), so the app keeps working
         offline. <strong>While signed out it stays on the device only and is never sent
@@ -588,21 +609,17 @@
       <h2><span class="n">3</span> What we do not collect</h2>
       <p>Ruttin <span class="none">does not collect</span>:</p>
       <ul>
-        <li>Location, contacts, microphone or camera</li>
+        <li>Location, contacts, microphone, camera or photos</li>
         <li>Advertising identifiers (IDFA) or usage history — there is no ad SDK and no analytics SDK</li>
         <li>The sleep and step values read from the Health app (see 4 below)</li>
         <li>Your password</li>
       </ul>
       <p>
-        <strong>Photos are used in one case only.</strong> A photo you pick
-        yourself with <em>Add a photo</em> on a finished routine is copied into
-        the app's folder and stays <strong>on this device</strong>. It is not
-        uploaded to our servers, not synced to your other devices, and is used
-        only to build your day card. We do not scan or list your photo library,
-        and if you pick nothing the app never touches your photos. It is deleted
-        together with the record when the retention period passes, and you can
-        revoke the permission any time in iOS
-        <em>Settings &gt; Privacy &amp; Security &gt; Photos</em>.
+        <strong>From 1.6.0 the app does not use photos.</strong> Photos you added
+        to finished routines in earlier versions were never uploaded and stayed
+        on your device. After you update to 1.6.0 and open the app,
+        <strong>those copies are deleted from the device</strong> (the originals
+        in your Photos app are not touched).
       </p>
       <p>We do not track you across other companies' apps or websites.</p>
     </section>
@@ -645,11 +662,10 @@
       </p>
       <p>Running the planner sends the following to NVIDIA:</p>
       <ul>
-        <li>The goal you picked (for example, Miracle morning)</li>
         <li>Your wake time and bedtime</li>
         <li>Your app language</li>
         <li>The <strong>names</strong> of routines you already have — so it doesn't suggest
-          the same ones again. Times and completion history are not sent</li>
+          the same ones again. Times are not sent</li>
       </ul>
       <p>
         <strong>Sleep and step data are not sent.</strong> What we read from Apple Health
@@ -693,7 +709,8 @@
       </ul>
       <p>
         Invite codes are six random characters, and only someone who has the code can join.
-        Goal rooms are open to anyone. <strong>There is no feature that pairs you with a
+        From 1.6.0 you can no longer join the public goal rooms (rooms you had
+        already joined keep working, and you can leave any time). <strong>There is no feature that pairs you with a
         random stranger.</strong>
       </p>
       <p>
@@ -846,7 +863,7 @@
   <main data-lang="ja">
     <header>
       <h1>Ruttin プライバシーポリシー</h1>
-      <p class="updated">最終更新日 2026年10月1日 · バージョン 1.9</p>
+      <p class="updated">最終更新日 2026年10月3日 · バージョン 2.0</p>
     </header>
 
     <p class="lede">
@@ -884,13 +901,19 @@
       </p>
       <ul>
         <li>ルーティンの一覧 — 名前、開始時刻、長さ、アイコン、色</li>
-        <li>完了したルーティンとその日付（直近 60 日分）</li>
-        <li>ルーティンを始めた日と、これまでに開いたルーティンの数</li>
-        <li>起床時刻、就寝時刻、選んだ目標</li>
+        <li>起床時刻、就寝時刻</li>
         <li>アプリに入力した表示名と年齢（任意）</li>
         <li>通知の設定、言語の設定、ヘルスケア連携の有無</li>
         <li>コミュニティを使う場合 — ニックネームと、コミュニティ規約に同意した時刻（上の6番）</li>
       </ul>
+      <p>
+        <strong>バージョン 1.5.0 までをお使いだった場合</strong>、そのとき保存された
+        完了の記録（直近 60 日分）、ルーティンを始めた日と開いた数、選んだ目標が
+        同じドキュメントに残っています。1.6.0 からはこれらの機能がなく、新しく
+        増えることも画面に出ることもありませんが、他の端末の古いバージョンが
+        使い続けられるよう、<strong>当社が自動で消すことはしません</strong>。
+        <em>データ初期化</em>または<em>アカウント削除</em>で一緒に消えます（下の 8 番）。
+      </p>
       <p>
         同じ内容は端末内（UserDefaults）にも残るので、オフラインでもそのまま使えます。
         <strong>ログアウト中は端末の中だけに残り、どこにも送信されません。</strong>
@@ -901,20 +924,16 @@
       <h2><span class="n">3</span> 取得しない情報</h2>
       <p>Ruttin は次の情報を<span class="none">取得しません</span>。</p>
       <ul>
-        <li>位置情報、連絡先、マイク、カメラ</li>
+        <li>位置情報、連絡先、マイク、カメラ、写真</li>
         <li>広告識別子（IDFA）、利用履歴 — 広告 SDK も解析 SDK も組み込んでいません</li>
         <li>ヘルスケアから読み取った睡眠・歩数の値（下の 4 番）</li>
         <li>パスワード</li>
       </ul>
       <p>
-        <strong>写真を使うのは一つの場合だけです。</strong> 完了したルーティンで
-        <em>写真を残す</em>を押して<strong>ご自身が選んだ</strong>写真1枚は、
-        アプリのフォルダにコピーされ<strong>この端末にだけ</strong>残ります。
-        当社のサーバーへ送らず、他の端末へ同期もせず、1日のカードを作るときだけ
-        使います。写真ライブラリを走査したり一覧を読んだりしません。選ばなければ
-        写真に一切アクセスしません。記録の保存期間が過ぎると一緒に削除され、
-        許可はiOSの<em>設定 &gt; プライバシーとセキュリティ &gt; 写真</em>で
-        いつでも取り消せます。
+        <strong>1.6.0 から写真は使いません。</strong> 以前のバージョンで完了した
+        ルーティンに残した写真は、サーバーへ送られたことはなく端末にだけありました。
+        1.6.0 に更新してアプリを開くと、<strong>そのコピーを端末から削除します</strong>
+        （写真アプリの元の写真には触れません）。
       </p>
       <p>他社のアプリやウェブサイトをまたぐ追跡は行いません。</p>
     </section>
@@ -955,11 +974,10 @@
       </p>
       <p>プランナーを実行すると、次の内容が NVIDIA に送信されます。</p>
       <ul>
-        <li>選んだ目標（例：ミラクルモーニング）</li>
         <li>起床時刻と就寝時刻</li>
         <li>アプリの言語設定</li>
         <li>すでに作成済みのルーティンの<strong>名前</strong> — 同じものを重ねて提案しないためです。
-          時刻や達成履歴は送りません</li>
+          時刻は送りません</li>
       </ul>
       <p>
         <strong>睡眠・歩数データは送信しません。</strong>Apple ヘルスケアから読み取った値は
@@ -1000,7 +1018,8 @@
       </ul>
       <p>
         招待コードはランダムな6文字で、コードを知っている人だけが参加できます。
-        目標別のオープンなグループは誰でも参加できます。
+        目標別のオープンなグループには 1.6.0 から新しく参加できません
+        （参加済みのグループはそのまま使え、いつでも退出できます）。
         <strong>見知らぬ相手とランダムにつなぐ機能はありません。</strong>
       </p>
       <p>
@@ -1150,7 +1169,7 @@
   <main data-lang="zh">
     <header>
       <h1>Ruttin 隐私政策</h1>
-      <p class="updated">最后更新 2026年10月1日 · 版本 1.9</p>
+      <p class="updated">最后更新 2026年10月3日 · 版本 2.0</p>
     </header>
 
     <p class="lede">
@@ -1186,13 +1205,18 @@
       </p>
       <ul>
         <li>例行列表 — 名称、开始时间、时长、图标、颜色</li>
-        <li>已完成的例行及其日期（最近 60 天）</li>
-        <li>开始使用例行的日期，以及目前已解锁的例行数量</li>
-        <li>起床时间、就寝时间、所选目标</li>
+        <li>起床时间、就寝时间</li>
         <li>你在应用中填写的昵称与年龄（均为选填）</li>
         <li>通知开关、语言设置、是否连接「健康」</li>
         <li>如果使用社区 — 昵称，以及同意社区条款的时间（见上文第 6 节）</li>
       </ul>
+      <p>
+        <strong>如果你用过 1.5.0 及更早的版本</strong>，当时保存的完成记录（最近 60 天）、
+        开始日期与已解锁数量、所选目标仍留在同一文档中。自 1.6.0 起这些功能已取消，
+        不会再新增，也不会显示；但为了让其他设备上的旧版本仍可使用，
+        <strong>我们不会主动删除</strong>。执行<em>重置数据</em>或<em>删除账号</em>时
+        会一并删除（见下文第 8 节）。
+      </p>
       <p>
         同样的内容也保留在设备上（UserDefaults），因此离线时应用照常可用。
         <strong>退出登录后，数据只留在设备里，不会发送到任何地方。</strong>
@@ -1203,18 +1227,15 @@
       <h2><span class="n">3</span> 我们不收集的信息</h2>
       <p>Ruttin <span class="none">不收集</span>以下信息：</p>
       <ul>
-        <li>位置、通讯录、麦克风、摄像头</li>
+        <li>位置、通讯录、麦克风、摄像头、照片</li>
         <li>广告标识符（IDFA）、使用记录 — 应用中没有广告 SDK，也没有分析 SDK</li>
         <li>从「健康」读取到的睡眠与步数数值（见下文第 4 条）</li>
         <li>密码</li>
       </ul>
       <p>
-        <strong>照片只在一种情况下使用。</strong> 你在已完成的日程上点
-        <em>留张照片</em> 并<strong>自己选择</strong>的一张照片，会被复制到应用
-        文件夹并<strong>只留在这台设备</strong>。不会上传到我们的服务器，不会同步
-        到你的其他设备，只在生成当天卡片时使用。我们不会扫描或读取你的相册列表；
-        你不选择，应用就不会接触照片。记录保存期结束时会一并删除，你可以随时在
-        iOS <em>设置 &gt; 隐私与安全性 &gt; 照片</em> 中撤销授权。
+        <strong>自 1.6.0 起，应用不再使用照片。</strong> 你在旧版本中为已完成例行
+        留下的照片从未上传，只存在设备上。更新到 1.6.0 并打开应用后，
+        <strong>这些副本会从设备上删除</strong>（不会动「照片」应用里的原图）。
       </p>
       <p>我们不会跨其他公司的应用或网站追踪用户。</p>
     </section>
@@ -1252,10 +1273,9 @@
       </p>
       <p>运行规划师时，以下内容会发送给 NVIDIA：</p>
       <ul>
-        <li>你选择的目标（例如「奇迹早晨」）</li>
         <li>起床时间与就寝时间</li>
         <li>应用的语言设置</li>
-        <li>你已创建例行的<strong>名称</strong> —— 用于避免重复推荐。时间与完成记录不会发送</li>
+        <li>你已创建例行的<strong>名称</strong> —— 用于避免重复推荐。时间不会发送</li>
       </ul>
       <p>
         <strong>不会发送睡眠和步数数据。</strong>从 Apple 健康读取的数值仅用于应用内分析，
@@ -1295,7 +1315,8 @@
         <li><strong>屏蔽名单</strong> — 屏蔽了谁。保存在账号而非设备上，<strong>不会告知对方</strong></li>
       </ul>
       <p>
-        邀请码为随机 6 位，只有知道邀请码的人才能加入；按目标划分的公开小组则人人可加入。
+        邀请码为随机 6 位，只有知道邀请码的人才能加入。自 1.6.0 起无法再新加入按目标划分的公开小组
+        （已加入的小组可继续使用，并可随时退出）。
         <strong>我们没有把你与陌生人随机配对的功能。</strong>
       </p>
       <p>
